@@ -12,13 +12,8 @@ export class OnHover implements ComponentFramework.ReactControl<IInputs, IOutput
 	private _mouseY:number;
 	private _isInsideContainer:boolean;
 	//private _rect: any;
-	
-	
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	constructor() { }
-
-	
-
 	public init(
 		context: ComponentFramework.Context<IInputs>,
 		notifyOutputChanged: () => void,
@@ -71,12 +66,16 @@ export class OnHover implements ComponentFramework.ReactControl<IInputs, IOutput
 				});
 
 				targetElement.addEventListener("mousedown", () => {
-					this._isClicked = true;
-					this._notifyOutputChanged();
+					if(!this._isClicked){ 
+						this._isClicked = true;
+						this._notifyOutputChanged();
+					}
 				});
 				document.addEventListener("mouseup", () => {
-					if(this._isClicked) false;
-					this._notifyOutputChanged();
+					if(this._isClicked){ 
+						this._isClicked = false;
+						this._notifyOutputChanged();
+					}
 				});
 			}
 		};
