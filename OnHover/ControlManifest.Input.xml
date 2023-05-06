@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="OnHoverReactPCFAln" constructor="OnHover" version="0.0.14" display-name-key="OnHover" description-key="OnHover description" control-type="virtual" >
+    
+    <external-service-usage enabled="false">
+      
+    </external-service-usage>
+    <property name="TargetControlId" display-name-key="Target Control Id" description-key="Target Control Id" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="IsHovered" display-name-key="Is Hovered" description-key="Is Hovered" of-type="TwoOptions" usage="bound" required="true" />
+    <property name="IsClicked" display-name-key="Is Clicked" description-key="Is Clicked" of-type="TwoOptions" usage="bound" required="true" />
+    <property name="XCoordinate" display-name-key="X Coordinate" description-key="X coordinate of cursor" of-type="Decimal" usage="bound" required="true" />
+    <property name="YCoordinate" display-name-key="Y Coordinate" description-key="Y coordinate of cursor" of-type="Decimal" usage="bound" required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.8.6" />
+      <platform-library name="Fluent" version="8.29.0" />
+
+    </resources>
+   
+  </control>
+</manifest>
