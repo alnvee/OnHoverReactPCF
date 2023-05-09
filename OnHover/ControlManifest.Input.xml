@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="OnHoverReactPCFAln" constructor="OnHover" version="0.0.15" display-name-key="OnHover" description-key="OnHover description" control-type="virtual" >
+<<<<<<< HEAD
+  <control namespace="OnHoverReactPCFAln" constructor="OnHover" version="0.0.18" display-name-key="OnHover" description-key="OnHover description" control-type="virtual" >
+=======
+  <control namespace="OnHoverReactPCFAln" constructor="OnHover" version="0.0.19" display-name-key="OnHover" description-key="OnHover description" control-type="virtual" >
+>>>>>>> parent of 8b7365c (Update ControlManifest.Input.xml)
     
     <external-service-usage enabled="false">
       

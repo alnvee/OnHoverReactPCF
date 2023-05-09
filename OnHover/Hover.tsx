@@ -12,12 +12,9 @@ export class Hover extends React.Component<IHoverProps> {
 	componentDidMount(): void {
 		//wait 1 second before initializing events
 		setTimeout(()=>{
-			console.log("component did mount");
 			this.props.initEvents();
 		}, 1000);
-		
 	}
-
 	public render(): React.ReactNode {
 
 		return (

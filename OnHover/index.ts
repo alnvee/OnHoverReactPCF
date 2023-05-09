@@ -27,8 +27,6 @@ export class OnHover implements ComponentFramework.ReactControl<IInputs, IOutput
 		this._mouseY = 0;
     
 	}
-
-	
 	public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
 
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
