@@ -6,7 +6,7 @@ Can be used inside a gallery.
 Parent container ID must be referenced by the PCF.  
 Refresh is required once to initialize eventlistener.  
 
-https://github.com/alnvee/OnHoverReactPCF/assets/4880732/d8733c9b-aa45-4616-9fa4-798270a6a7fa
+https://github.com/alnvee/OnHoverReactPCF/assets/4880732/42b96e3b-6c6f-43c4-b699-4cd784399422
 
 Solution: https://github.com/alnvee/OnHoverReactPCF/releases/
 
@@ -16,4 +16,4 @@ https://github.com/alnvee/OnHoverReactPCF/blob/master/_DemoApp/OnHoverDemo.msapp
 You can install this demo by:
   - create a new canvas app  
   - click open and browse the msapp file  
-![install msapp](https://github.com/alnvee/OnHoverReactPCF/assets/4880732/be7bd656-6a0d-4339-aa2f-9072c128c799)
+![install msapp](https://github.com/alnvee/OnHoverReactPCF/assets/4880732/ce53fac3-226e-4463-bffa-e338b55f19d9)
