@@ -3,8 +3,8 @@ This pcf attaches a mouseenter event listener to its parent container.
 Users can interact with all controls inside the container because width and height can be set to 0. 
 Nothing is overlapped by the PCF.  
 Can be used inside a gallery.  
-Parent container ID must be referenced by the PCF.
-Refresh is required once to initialize eventlistener.
+Parent container ID must be referenced by the PCF.  
+Refresh is required once to initialize eventlistener.  
 
 https://github.com/alnvee/OnHoverReactPCF/assets/4880732/d8733c9b-aa45-4616-9fa4-798270a6a7fa
 
