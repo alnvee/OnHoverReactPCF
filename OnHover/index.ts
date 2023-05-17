@@ -5,6 +5,7 @@ import * as React from "react";
 export class OnHover implements ComponentFramework.ReactControl<IInputs, IOutputs> {
 	private _notifyOutputChanged: () => void;
 	private _isHovered: boolean;
+	private _isClicked: boolean;
 
 	constructor() {
 		this._isHovered = false;
@@ -25,32 +26,40 @@ export class OnHover implements ComponentFramework.ReactControl<IInputs, IOutput
 
 		const handleMouseEnter = (): void => {
 			this._isHovered = true;
+			this._isClicked = false;
 			this._notifyOutputChanged();
 		};
 
 		const handleMouseLeave = (): void => {
 			this._isHovered = false;
+			this._isClicked = false;
 			this._notifyOutputChanged();
 		};
+
+		const handleMouseClick = (): void => {
+			this._isClicked = true;
+			this._notifyOutputChanged();
+		};
+
 
 		const props: IHoverProps = { 
 			label: "", //for testing ,
 			height: height.toString(),
 			width: width.toString(),
-			parentContainerId: context.parameters.ParentContainerId.raw!,
+			parentContainerId: context.parameters.ParentContainerId.raw || "",
 			onMouseEnter: handleMouseEnter,
-			onMouseLeave: handleMouseLeave
+			onMouseLeave: handleMouseLeave,
+			onMouseClick: handleMouseClick
 		};
 		return React.createElement(
 			Hover, props
 		);
-
-   
 	}
 
 	public getOutputs(): IOutputs {
 		return { 
 			IsHovered: this._isHovered,
+			IsClicked: this._isClicked,
 		};
 	}
 

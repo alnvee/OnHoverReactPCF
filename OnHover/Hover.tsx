@@ -6,7 +6,8 @@ export interface IHoverProps {
   width?: string,
   parentContainerId: string,
   onMouseEnter: () => void,
-  onMouseLeave: () => void
+  onMouseLeave: () => void,
+  onMouseClick: () => void,
 }
 
 export class Hover extends React.Component<IHoverProps> {
@@ -17,6 +18,7 @@ export class Hover extends React.Component<IHoverProps> {
 		if (targetElement) {
 			targetElement.addEventListener("mouseenter", this.props.onMouseEnter);
 			targetElement.addEventListener("mouseleave", this.props.onMouseLeave);
+			targetElement.addEventListener("click", this.props.onMouseClick);
 		}
 	}
 
@@ -25,6 +27,7 @@ export class Hover extends React.Component<IHoverProps> {
 		if (targetElement) {
 			targetElement.removeEventListener("mouseenter", this.props.onMouseEnter);
 			targetElement.removeEventListener("mouseleave", this.props.onMouseLeave);
+			targetElement.removeEventListener("click", this.props.onMouseClick);
 		}
 	}
 
