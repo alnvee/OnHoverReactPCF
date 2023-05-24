@@ -12,13 +12,39 @@ export interface IHoverProps {
 
 export class Hover extends React.Component<IHoverProps> {
 	private _element: HTMLDivElement | null = null;
+	private _targetElement: HTMLDivElement |null | undefined = null;
+
+	componentDidUpdate(prevProps: Readonly<IHoverProps>): void {
+		if (this.props.parentContainerId === prevProps.parentContainerId) {
+			// Skip if container id is the same
+			return;
+		}
+      
+		// Remove event listeners from previous element
+		if (this._targetElement) {
+			this._targetElement.removeEventListener("mouseenter", this.props.onMouseEnter);
+			this._targetElement.removeEventListener("mouseleave", this.props.onMouseLeave);
+			this._targetElement.removeEventListener("click", this.props.onMouseClick);
+		}
+      
+		// Update target element reference based on current parentContainerId
+		this._targetElement = this._element?.closest(`[data-control-name="${this.props.parentContainerId}"]`);
+      
+		// Add event listeners to the new element
+		if (this._targetElement) {
+			this._targetElement.addEventListener("mouseenter", this.props.onMouseEnter);
+			this._targetElement.addEventListener("mouseleave", this.props.onMouseLeave);
+			this._targetElement.addEventListener("click", this.props.onMouseClick);
+		}
+	}
+      
 
 	componentDidMount(): void {
-		const targetElement = this._element?.closest(`[data-control-name="${this.props.parentContainerId}"]`);
-		if (targetElement) {
-			targetElement.addEventListener("mouseenter", this.props.onMouseEnter);
-			targetElement.addEventListener("mouseleave", this.props.onMouseLeave);
-			targetElement.addEventListener("click", this.props.onMouseClick);
+		this._targetElement = this._element?.closest(`[data-control-name="${this.props.parentContainerId}"]`);
+		if (this._targetElement) {
+			this._targetElement.addEventListener("mouseenter", this.props.onMouseEnter);
+			this._targetElement.addEventListener("mouseleave", this.props.onMouseLeave);
+			this._targetElement.addEventListener("click", this.props.onMouseClick);
 		}
 	}
 
@@ -43,4 +69,5 @@ export class Hover extends React.Component<IHoverProps> {
 			</div>
 		);
 	}
+
 }

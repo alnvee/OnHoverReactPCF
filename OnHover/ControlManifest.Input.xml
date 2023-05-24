@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="OnHoverReactPCFAln" constructor="OnHover" version="0.0.24" display-name-key="OnHover" description-key="OnHover description" control-type="virtual" >
+  <control namespace="OnHoverReactPCFAln" constructor="OnHover" version="0.0.34" display-name-key="OnHover" description-key="OnHover description" control-type="virtual" >
     <external-service-usage enabled="false">
       
     </external-service-usage>
