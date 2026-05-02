@@ -73,6 +73,7 @@ jobs:
             - `react` / `react-dom`: 16.14.0
             - `pcf-scripts`: 1.51.1
             - `typescript`: 5.9.3
+            - `@types/node`: ^20.19.39
           files: _SlnOnHoverReactPCF/bin/Release/SlnOnHoverReactPCF.zip
           draft: false
           prerelease: false
