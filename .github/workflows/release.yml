@@ -6,7 +6,6 @@ on:
       - 'v*'
     branches:
       - 'release/v*'
-      - 'copilot/update-releases-with-new-build'
   workflow_dispatch:
     inputs:
       tag:
